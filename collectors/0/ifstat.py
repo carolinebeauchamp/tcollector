@@ -45,7 +45,7 @@ def main():
         f_netdev.seek(0)
         ts = int(time.time())
         for line in f_netdev:
-            m = re.match("\s+(eth\d+):(.*)", line)
+            m = re.match("\s+(eth\d+|bond\d+):(.*)", line)
             if not m:
                 continue
             stats = m.group(2).split(None)
